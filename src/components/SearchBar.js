@@ -17,7 +17,6 @@ class SearchBar extends React.Component {
       }
     
       handleSubmit(event) {
-        alert('Your are looking for ' + this.state.value);
         this.setState({pType: this.state.value});
         event.preventDefault();
       }

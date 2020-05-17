@@ -14,13 +14,18 @@ class StoreItem extends React.Component {
 
     render() {
         const {content} = this.props;
+        const currProduct = content.products.find(product => product.name === this.props.pType);
         return (
         <div>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem'}, {marginLeft: "-5pt"}}>
+            <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
                 <Card.Title>{content.name}</Card.Title>
                 <Card.Text>
-                {content.location}
+                Availability: {currProduct.quantity} are left
+                </Card.Text>
+                <Card.Text>
+                Location: {currProduct.location}
                 </Card.Text>
             </Card.Body>
             </Card>

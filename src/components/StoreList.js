@@ -22,19 +22,17 @@ class StoreList extends React.Component {
                 return (
                     <StoreItem
                     content={item}
-                    index={index}/>
+                    index={index}
+                    pType={this.props.pType}/>
                 )
             }
         )
         )
     }
 
-
-
     render() {
         return (
             <Fragment>
-            <div>{this.props.pType}</div>
             <ul>{this.getAvailableStores()}</ul>
             </Fragment>
         )

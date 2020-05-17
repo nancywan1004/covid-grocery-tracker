@@ -39,7 +39,7 @@ class App extends Component {
         <div ref={ref => this.el = ref}>
             <SlidingPane
                 isOpen={ this.state.isPaneOpenLeft }
-                title='Search the hygiene product'
+                title='Search for hygiene product'
                 from='left'
                 width='400px'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
