@@ -1,0 +1,482 @@
+{
+    "stores": [{
+        "name":"save_on_foods",
+        "icon":"images/saveonfoods.png",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":5,
+                "restock_on":"thursday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":150,
+                "restock_on":"monday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":125,
+                "restock_on":"thursday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":95,
+                "restock_on":"monday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"monday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"shoppers_drugmart",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":58,
+                "restock_on":"monday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":18,
+                "restock_on":"thursday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":99,
+                "restock_on":"monday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"thursday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":56,
+                "restock_on":"monday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"no_frills",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":50,
+                "restock_on":"thursday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"monday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"thursday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":175,
+                "restock_on":"monday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":28,
+                "restock_on":"thursday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"rexall",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":99,
+                "restock_on":"monday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":175,
+                "restock_on":"thursday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":28,
+                "restock_on":"monday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":33,
+                "restock_on":"thursday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":26,
+                "restock_on":"monday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"harvest",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":17,
+                "restock_on":"thursday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"monday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":23,
+                "restock_on":"monday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":56,
+                "restock_on":"thursday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":10,
+                "restock_on":"monday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"costco",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":253,
+                "restock_on":"thursday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":95,
+                "restock_on":"tuesday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":145,
+                "restock_on":"thursday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":256,
+                "restock_on":"tuesday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":13,
+                "restock_on":"thursday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"walmart",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"tuesday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"tuesday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":245,
+                "restock_on":"wednesday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":108,
+                "restock_on":"wednesday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":53,
+                "restock_on":"wednesday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"superstore",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":70,
+                "restock_on":"tuesday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"tuesday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"tuesday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":65,
+                "restock_on":"wednesday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":28,
+                "restock_on":"wednesday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"iga",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":25,
+                "restock_on":"tuesday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":25,
+                "restock_on":"friday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"friday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":35,
+                "restock_on":"tuesday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":1,
+                "restock_on":"friday"
+
+            }
+
+        ]
+
+    },
+
+    {
+        "name":"london_drugs",
+        "icon":"",
+        "location":"",
+        "products":[
+            {
+                "name":"sanitizer",
+                "icon":"",
+                "quantity":35,
+                "restock_on":"tuesday"
+            
+            },
+            {
+                "name":"mask",
+                "icon":"",
+                "quantity":0,
+                "restock_on":"saturday"
+
+            },
+            {
+
+                "name":"disinfectant_wipes",
+                "icon":"",
+                "quantity":53,
+                "restock_on":"saturday"
+
+            },
+            {
+
+                "name":"soap",
+                "icon":"",
+                "quantity":65,
+                "restock_on":"saturday"
+
+            },
+            {
+
+                "name":"bleach",
+                "icon":"",
+                "quantity":85,
+                "restock_on":"tuesday"
+
+            }
+
+        ]
+
+    }
+]
+}

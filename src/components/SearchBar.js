@@ -1,10 +1,11 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
+import StoreList from './StoreList';
 
 class SearchBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: 'products'};
+        this.state = {value: 'products', pType: ''};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,6 +18,7 @@ class SearchBar extends React.Component {
     
       handleSubmit(event) {
         alert('Your are looking for ' + this.state.value);
+        this.setState({pType: this.state.value});
         event.preventDefault();
       }
     
@@ -31,15 +33,18 @@ class SearchBar extends React.Component {
                                 {this.state.value}
                             </Dropdown.Toggle>
                             <Dropdown.Menu >
-                                <Dropdown.Item eventKey="toilet paper">Toilet Paper</Dropdown.Item>
+                                <Dropdown.Item eventKey="bleach">Bleach</Dropdown.Item>
                                 <Dropdown.Item eventKey="sanitizer">Sanitizer</Dropdown.Item>
-                                <Dropdown.Item eventKey="wet tissue">Wet Tissue</Dropdown.Item>
-                                <Dropdown.Item eventKey="masks">Masks</Dropdown.Item>
+                                <Dropdown.Item eventKey="disinfectant_wipes">Disinfectant Wipes</Dropdown.Item>
+                                <Dropdown.Item eventKey="mask">Mask</Dropdown.Item>
+                                <Dropdown.Item eventKey="soap">Soap</Dropdown.Item>
                             </Dropdown.Menu>
                     </Dropdown>
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
+
+                <StoreList pType={this.state.pType}/>
             </div>
         )
     }

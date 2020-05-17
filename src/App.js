@@ -3,11 +3,8 @@ import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import SearchBar from './components/SearchBar';
-import StoreItem from './components/StoreItem';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 
@@ -47,7 +44,6 @@ class App extends Component {
                 width='400px'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
                 <SearchBar />
-                <StoreItem />
             </SlidingPane>
         </div>
         </div>
