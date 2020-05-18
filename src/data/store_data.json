@@ -1,8 +1,8 @@
 {
     "stores": [{
         "name":"save_on_foods",
-        "icon":"images/saveonfoods.png",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipP6U_lIswXGizU0_qGTiji3V4ZaL8Sk0mStGwNE=w408-h306-k-no",
+        "location":"5945 Berton Ave, Vancouver, BC V6S 0B3",
         "products":[
             {
                 "name":"sanitizer",
@@ -49,8 +49,8 @@
 
     {
         "name":"shoppers_drugmart",
-        "icon":"",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipNriASy9zv7HVX8kbZEFFD7UZkIAG_92ezPpU94=w426-h240-k-no",
+        "location":"5968 Webber Ln, Vancouver, BC V6S 0J9",
         "products":[
             {
                 "name":"sanitizer",
@@ -97,8 +97,8 @@
 
     {
         "name":"no_frills",
-        "icon":"",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipPkuyJSrz1T8Yy6wYZdwQP5xKx1TJxk4a6gi7pC=w408-h306-k-no",
+        "location":"1688 W 4th Ave, Vancouver, BC V6J 0B7",
         "products":[
             {
                 "name":"sanitizer",
@@ -145,8 +145,8 @@
 
     {
         "name":"rexall",
-        "icon":"",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipP3UiussHk-Z4mefl-z_BKcTQ1-COfmIpSqisso=w408-h251-k-no",
+        "location":"88 W Pender St #1173, Vancouver, BC V6B 6N9",
         "products":[
             {
                 "name":"sanitizer",
@@ -193,8 +193,8 @@
 
     {
         "name":"harvest",
-        "icon":"",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipMyFXZyyXK9IZ4RZGDOYYRn0GTTf5emk8C6aWJl=w408-h306-k-no",
+        "location":"6445 University Blvd, Vancouver, BC V6T 1Z2",
         "products":[
             {
                 "name":"sanitizer",
@@ -241,8 +241,8 @@
 
     {
         "name":"costco",
-        "icon":"",
-        "location":"",
+        "icon":"https://geo1.ggpht.com/cbk?panoid=pZPM6zXHJwLLAM46ck82dQ&output=thumbnail&cb_client=search.gws-prod.gps&thumb=2&w=408&h=240&yaw=319.90033&pitch=0&thumbfov=100",
+        "location":"605 Expo Blvd, Vancouver, BC V6B 1V4",
         "products":[
             {
                 "name":"sanitizer",
@@ -289,8 +289,8 @@
 
     {
         "name":"walmart",
-        "icon":"",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipNVmgb6RgaYjofJBloAOAMrVQcRn6RkwDUs88aO=w408-h306-k-no",
+        "location":"1000 104 Ave, Surrey, BC V3R 1N31000 104 Ave, Surrey, BC V3R 1N3",
         "products":[
             {
                 "name":"sanitizer",
@@ -337,8 +337,8 @@
 
     {
         "name":"superstore",
-        "icon":"",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipNH8NmziBfma9HQPD_Wzxq_97CnUt0a_-ONbplU=w426-h240-k-no",
+        "location":"8195 120 St, Delta, BC V4C 6P7",
         "products":[
             {
                 "name":"sanitizer",
@@ -385,8 +385,8 @@
 
     {
         "name":"iga",
-        "icon":"",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipPbNxnOHAfMKw7FFwKY3g8zq_uVhfwTYhQp2JqZ=w408-h306-k-no",
+        "location":"3515 W 4th Ave, Vancouver, BC V6R 1N9",
         "products":[
             {
                 "name":"sanitizer",
@@ -433,8 +433,8 @@
 
     {
         "name":"london_drugs",
-        "icon":"",
-        "location":"",
+        "icon":"https://lh5.googleusercontent.com/p/AF1QipOVQj9fm_XQv_tBmZaqXN8rhdk00pGKAFLCxNRq=w408-h306-k-no",
+        "location":"12831 Horseshoe Pl, Richmond, BC V7A 4X5",
         "products":[
             {
                 "name":"sanitizer",

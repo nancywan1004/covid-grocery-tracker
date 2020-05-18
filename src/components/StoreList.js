@@ -8,21 +8,30 @@ class StoreList extends React.Component {
         this.state = {
             stores: StoreData.stores
         }
-        this.getAvailableStores = this.getAvailableStores.bind(this);
+        this.getStoresByAvail = this.getStoresByAvail.bind(this);
+        this.checkAvail = this.checkAvail.bind(this);
     }
 
-    getAvailableStores() {
-        const checkAvail = (elem) => elem.name === this.props.pType && elem.quantity > 0;
+    checkAvail(elem) {
+        return elem.name === this.props.pType && elem.quantity > 0;
+    }
+
+    getStoresByAvail() {
         const availStores = this.state.stores.filter(store =>
-            store.products.some(checkAvail)
+            store.products.some(this.checkAvail)
         );
         console.log(availStores);
+        // this.state.stores.forEach(store => {
+        //     if (!availStores.includes(store)) {
+        //         availStores.push(store);
+        //     }
+        // })
         return (
             availStores.map((item, index) => {
                 return (
                     <StoreItem
                     content={item}
-                    index={index}
+                    key={index}
                     pType={this.props.pType}/>
                 )
             }
@@ -33,7 +42,7 @@ class StoreList extends React.Component {
     render() {
         return (
             <Fragment>
-            <ul>{this.getAvailableStores()}</ul>
+            <ul>{this.getStoresByAvail()}</ul>
             </Fragment>
         )
     }
