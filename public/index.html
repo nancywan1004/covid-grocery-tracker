@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Traffic Jam</title>
+	<title>Traffic Jam</title>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -38,21 +39,21 @@
         z-index: 5;
       }
     </style>
-  </head>
+	</head>
 
   <body>
-    <!--<div id="floating-panel">
-      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-    </div>-->
     <div id="inventory"></div>
-    <div id="map"></div>
+	<div id="map"></div>
+	<div id="results">
+		<ul id="places"></ul>
+	</div>
     <script>
 
       // This example requires the Visualization library. Include the libraries=visualization
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
-      var map, heatmap;
+      var map, heatmap, pos;
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -143,12 +144,12 @@
           // styling ends
         });
         // setting the heat map
-        heatmap = new google.maps.visualization.HeatmapLayer({
-          data: getPoints(),
-          map: map
-        });
+        // heatmap = new google.maps.visualization.HeatmapLayer({
+        //   data: getPoints(),
+        //   map: map
+        // });
 
-        heatmap.set('radius', heatmap.get('radius') ? null : 20);
+        // heatmap.set('radius', heatmap.get('radius') ? null : 20);
 
         // customized logos for grocery stores
         var icons = {
@@ -156,32 +157,114 @@
             icon: './groceries.png'
           }
       	};
-      	// creating an info window
- 		var infowindow = new google.maps.InfoWindow()
-  		// END of info window
 
-      	var stores = getStores();
-        for (var i = 0; i < stores.length; i++) {
-          	const marker = new google.maps.Marker({
-    			position: stores[i].position,
-    			icon: icons[stores[i].type].icon,
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+			};
+
+			const currLocMarker = new google.maps.Marker({
+    			position: pos,
     			map: map
+			  });
+			google.maps.event.addListener(currLocMarker, 'click', function() {
+				map.setCenter(currLocMarker.position);
+			})
+			// Auto-locate to your current position
+			map.setCenter(pos);
+			
+			service = new google.maps.places.PlacesService(map);
+	  		console.log(service);
+
+			service.nearbySearch(
+			{location: pos, radius: 500, type: ['pharmacy']},
+			function(results, status) {
+				if (status !== 'OK') return;
+
+				createMarkers(results);
+			});
+
+			var infoWindow = new google.maps.InfoWindow();
+			function createMarkers(places) {
+				var bounds = new google.maps.LatLngBounds();
+				var placesList = document.getElementById('places');
+
+				for (var i = 0, place; place = places[i]; i++) {
+					var image = {
+					url: './groceries.png',
+					size: new google.maps.Size(71, 71),
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(17, 34),
+					scaledSize: new google.maps.Size(30, 30)
+					};
+
+					var marker = new google.maps.Marker({
+					map: map,
+					icon: image,
+					title: place.name,
+					position: place.geometry.location
+					});
+
+					let contentString = "<div><h2><b>"+place.name+"</b></h2></div>"+'<p style="font-size:18px">Congestion: <b><span style="color:'+place.opening_hours.isOpen()+'">%</b></span></p>'
+					makeInfoWindow(marker, contentString);
+
+					var li = document.createElement('li');
+					li.textContent = place.name;
+					li.id = place.place_id;
+					placesList.appendChild(li);
+
+					bounds.extend(place.geometry.location);
+				}
+				map.fitBounds(bounds);
+			}
+
+			function makeInfoWindow(marker, content){
+  				google.maps.event.addListener(marker, 'click', function () {
+    			infoWindow.setContent(content);
+    			infoWindow.open(map, marker);
   			});
-  			/*var infowindow = new google.maps.InfoWindow({
-    			content: "<div><h2><b>"+stores[i].name+"</b></h2></div>"+"<div>Congestion: "+getCongestion(stores[i].position)+"</div>"
-  			});*/
-  			let contentString = "<div><h2><b>"+stores[i].name+"</b></h2></div>"+'<p style="font-size:18px">Congestion: <b><span style="color:'+textColour(Math.round(getCongestion(stores[i])))+'">'+Math.round(getCongestion(stores[i]))+"%</b></span></p>"
-  			google.maps.event.addListener(marker, 'click', function() {
-  				infowindow.close();
-  				infowindow.setContent(contentString);
-    			infowindow.open(map, marker);
-  			});
-        };
-        // LOL it actually worked wtf
-      }
-      function toggleHeatmap() {
-        heatmap.setMap(heatmap.getMap() ? null : map);
-      }
+}
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+	  }
+
+
+      	// var stores = getStores();
+        // for (var i = 0; i < stores.length; i++) {
+        //   	const marker = new google.maps.Marker({
+    	// 		position: stores[i].position,
+    	// 		icon: icons[stores[i].type].icon,
+    	// 		map: map
+  		// 	});
+  		// 	/*var infowindow = new google.maps.InfoWindow({
+    	// 		content: "<div><h2><b>"+stores[i].name+"</b></h2></div>"+"<div>Congestion: "+getCongestion(stores[i].position)+"</div>"
+  		// 	});*/
+  		// 	let contentString = "<div><h2><b>"+stores[i].name+"</b></h2></div>"+'<p style="font-size:18px">Congestion: <b><span style="color:'+textColour(Math.round(getCongestion(stores[i])))+'">'+Math.round(getCongestion(stores[i]))+"%</b></span></p>"
+  		// 	google.maps.event.addListener(marker, 'click', function() {
+  		// 		infoWindow.close();
+  		// 		infoWindow.setContent(contentString);
+    	// 		infoWindow.open(map, marker);
+  		// 	});
+		// };
+	}
+    //   function toggleHeatmap() {
+    //     heatmap.setMap(heatmap.getMap() ? null : map);
+    //   }
       // get what the congestion is like
       function getCongestion(store) {
       	var points = getPoints();
@@ -1293,16 +1376,20 @@
           }
         ];
       }
-    </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD8PgXFE_AhScmI-7rvwlz7F0No0ZhNmw&libraries=visualization&callback=initMap">
-    </script>
+
+</script>
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD8PgXFE_AhScmI-7rvwlz7F0No0ZhNmw&libraries=places"></script> -->
+    <!-- <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXjhmsZMITGCPcSQKA2Oxdq9QKqTmAjeE&libraries=places">
+	</script> -->
+	<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXjhmsZMITGCPcSQKA2Oxdq9QKqTmAjeE&callback=initMap&libraries=places"
+	defer
+  ></script>
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
-    <!-- Load our React component. -->
-    <script type="text/babel" src="../src/heatmap.js"></script>
   </body>
 </html>
