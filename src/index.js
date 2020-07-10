@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
@@ -7,18 +7,20 @@ import SearchBar from './components/SearchBar';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TodoList from './components/TodoList';
 import './style.css'
- 
+
+const places = document.getElementById('places').getElementsByTagName('li');
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isPaneOpen: false,
-            isPaneOpenLeft: false
+            isPaneOpenLeft: false,
+            placesOnMap: places
         };
     }
  
@@ -57,7 +59,7 @@ class App extends Component {
                 from='left'
                 width='400px'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                <SearchBar />
+                <SearchBar placesOnMap={this.state.placesOnMap}/>
             </SlidingPane>
         </div>
         </div>

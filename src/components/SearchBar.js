@@ -43,7 +43,7 @@ class SearchBar extends React.Component {
                     <input type="submit" value="Submit" />
                 </form>
 
-                <StoreList pType={this.state.pType}/>
+                <StoreList pType={this.state.pType} placesOnMap={this.props.placesOnMap}/>
             </div>
         )
     }

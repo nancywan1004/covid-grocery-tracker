@@ -32,7 +32,8 @@ class StoreList extends React.Component {
                     <StoreItem
                     content={item}
                     key={index}
-                    pType={this.props.pType}/>
+                    pType={this.props.pType}
+                    placesOnMap={this.props.placesOnMap}/>
                 )
             }
         )
