@@ -143,15 +143,7 @@
           ]
           // styling ends
         });
-        // setting the heat map
-        // heatmap = new google.maps.visualization.HeatmapLayer({
-        //   data: getPoints(),
-        //   map: map
-        // });
 
-        // heatmap.set('radius', heatmap.get('radius') ? null : 20);
-
-        // customized logos for grocery stores
         var icons = {
           groceries: {
             icon: './groceries.png'
@@ -243,28 +235,8 @@
         infoWindow.open(map);
 	  }
 
-
-      	// var stores = getStores();
-        // for (var i = 0; i < stores.length; i++) {
-        //   	const marker = new google.maps.Marker({
-    	// 		position: stores[i].position,
-    	// 		icon: icons[stores[i].type].icon,
-    	// 		map: map
-  		// 	});
-  		// 	/*var infowindow = new google.maps.InfoWindow({
-    	// 		content: "<div><h2><b>"+stores[i].name+"</b></h2></div>"+"<div>Congestion: "+getCongestion(stores[i].position)+"</div>"
-  		// 	});*/
-  		// 	let contentString = "<div><h2><b>"+stores[i].name+"</b></h2></div>"+'<p style="font-size:18px">Congestion: <b><span style="color:'+textColour(Math.round(getCongestion(stores[i])))+'">'+Math.round(getCongestion(stores[i]))+"%</b></span></p>"
-  		// 	google.maps.event.addListener(marker, 'click', function() {
-  		// 		infoWindow.close();
-  		// 		infoWindow.setContent(contentString);
-    	// 		infoWindow.open(map, marker);
-  		// 	});
-		// };
 	}
-    //   function toggleHeatmap() {
-    //     heatmap.setMap(heatmap.getMap() ? null : map);
-    //   }
+
       // get what the congestion is like
       function getCongestion(store) {
       	var points = getPoints();
@@ -1293,99 +1265,26 @@
         ];
       }
 
-      // Store location data
-      function getStores() {
-      	return [
-          {
-            position: new google.maps.LatLng(49.280525, -123.118844),
-            name: "H-Mart",
-            size: 3700,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.278813, -123.109524),
-            name: "Costco Wholesale",
-            size: 14000,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.264829, -123.114431),
-            name: "Save-On-Foods",
-            size: 3700,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.286856, -123.121759),
-            name: "Rexall",
-            size: 1000,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.285736, -123.115236),
-            name: "Rexall",
-            size: 1000,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.280753, -123.106824),
-            name: "Rexall",
-            size: 1000,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.278452, -123.120220),
-            name: "Shoppers Drug Mart",
-            size: 3700,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.276648, -123.126596),
-            name: "Shoppers Drug Mart",
-            size: 3700,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.281960, -123.131282),
-            name: "Shoppers Drug Mart",
-            size: 3700,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.284265, -123.122294),
-            name: "Shoppers Drug Mart",
-            size: 3700,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.284516, -123.115918),
-            name: "Shoppers Drug Mart",
-            size: 3700,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.289126, -123.123677),
-            name: "Shoppers Drug Mart",
-            size: 3700,
-            type: 'groceries'
-          },
-          {
-            position: new google.maps.LatLng(49.290328, -123.138888),
-            name: "Shoppers Drug Mart",
-            size: 3700,
-            type: 'groceries'
-          }
-        ];
-      }
-
 </script>
-	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD8PgXFE_AhScmI-7rvwlz7F0No0ZhNmw&libraries=places"></script> -->
-    <!-- <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXjhmsZMITGCPcSQKA2Oxdq9QKqTmAjeE&libraries=places">
-	</script> -->
-	<script
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXjhmsZMITGCPcSQKA2Oxdq9QKqTmAjeE&callback=initMap&libraries=places"
-	defer
-  ></script>
+	<script>
+		let request = new XMLHttpRequest();
+		request.open('GET', "http://localhost:9000/testAPI", true);
+		request.onload = () => {
+			if (request.status >= 200 && request.status < 400) {
+				function loadScript(callback) {
+					// Create the element
+					let script = document.createElement("script");
+					script.onload = function(){
+            			callback();
+					};
+					script.src = "https://maps.googleapis.com/maps/api/js?key=" + request.response + "&callback=initMap&libraries=places";
+					document.body.appendChild(script);
+				}
+				loadScript(initMap);
+			}
+		}
+		request.send();
+</script>
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
