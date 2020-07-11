@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
@@ -7,16 +7,20 @@ import SearchBar from './components/SearchBar';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
- 
+import TodoList from './components/TodoList';
+import './style.css'
+
+const places = document.getElementById('places').getElementsByTagName('li');
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isPaneOpen: false,
-            isPaneOpenLeft: false
+            isPaneOpenLeft: false,
+            placesOnMap: places
         };
     }
  
@@ -27,24 +31,35 @@ class App extends Component {
     render() {
         return (
         <div>
-          <Navbar bg="light" expand="lg" className="d-flex">
-            <Navbar.Brand href="#" onClick={ () => this.setState({ isPaneOpenLeft: true })}>Menu</Navbar.Brand>
+          <Navbar expand="lg" className="d-flex">
+            <Button variant="outline-success" onClick={ () => this.setState({ isPaneOpenLeft: true })}>Inventory</Button>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Form inline className="ml-auto p-2">
-                <FormControl type="text" placeholder="6-digit postal code.." className="mr-sm-2" />
-                <Button variant="outline-success">Search</Button>
+                <Button variant="outline-success" onClick={ () => this.setState({ isPaneOpen: true })}>GroceryCheck</Button>
               </Form>
             </Navbar.Collapse>
           </Navbar>
-        <div ref={ref => this.el = ref}>
+        <div ref={ref => this.el = ref} style={{backgroundColor: 'black'}}>
+        <SlidingPane
+                className='some-custom-class'
+                overlayClassName='some-custom-overlay-class'
+                isOpen={ this.state.isPaneOpen }
+                title='Type in your grocery list'
+                width='400px'
+                onRequestClose={ () => {
+                    // triggered on "<" on left top click or on outside click
+                    this.setState({ isPaneOpen: false });
+                } }>
+            <TodoList />
+            </SlidingPane>
             <SlidingPane
                 isOpen={ this.state.isPaneOpenLeft }
                 title='Search for hygiene product'
                 from='left'
                 width='400px'
                 onRequestClose={ () => this.setState({ isPaneOpenLeft: false }) }>
-                <SearchBar />
+                <SearchBar placesOnMap={this.state.placesOnMap}/>
             </SlidingPane>
         </div>
         </div>
