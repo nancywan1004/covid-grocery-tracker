@@ -13,6 +13,8 @@ class SearchBar extends React.Component {
     
       handleChange(event) {
         console.log(event);
+        // this.setState({pType: event});
+        // event.preventDefault();
         this.setState({value: event});
       }
     
