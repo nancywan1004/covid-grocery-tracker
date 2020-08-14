@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import '../style.css';
 
 class StoreItem extends React.Component {
     constructor(props) {
@@ -52,7 +53,7 @@ class StoreItem extends React.Component {
         //     )
         // } else {
         return (
-        <div>
+        <div className="card-item">
             <Card className="text-center" style={{ width: '18rem'}}>
             <Card.Img variant="top" src={content.icon} />
             <Card.Body>

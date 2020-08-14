@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
+import Button from 'react-bootstrap/Button';
 import TodoItem from './TodoItem';
-import '../style.css';
+
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -52,10 +53,10 @@ class TodoList extends Component {
     return (
       <Fragment>
         <div>
-          <input style={{margin: 0}} value={this.state.inputValue} onChange={this.handleInputChange}/>
-          <button className='red-btn' onClick={this.handleBtnClick}>add</button>
+          <input style={{margin: 10}} value={this.state.inputValue} onChange={this.handleInputChange}/>
+          <Button variant="success" onClick={this.handleBtnClick}>Add</Button>
         </div>
-        <ul style={{marginTop: 10}}>{this.getTodoItems()}</ul>
+        <ul style={{marginTop: 10, marginLeft: -30}}>{this.getTodoItems()}</ul>
       </Fragment>
     );
   }

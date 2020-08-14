@@ -2,3 +2,13 @@
     background: greenyellow;
     color: #ffffff
 }
+
+.card-item {
+    width: 100px;
+    margin-left: -20px;
+    margin-bottom: 20px;
+}
+
+#dropdown-basic {
+    margin-right: 10px;
+}
