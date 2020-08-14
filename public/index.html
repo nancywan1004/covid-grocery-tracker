@@ -49,10 +49,6 @@
 	</div>
     <script>
 
-      // This example requires the Visualization library. Include the libraries=visualization
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
-
       var map, heatmap, pos;
 
       function initMap() {
@@ -200,7 +196,9 @@
 					position: place.geometry.location
 					});
 
-					let contentString = "<div><h2><b>"+place.name+"</b></h2></div>"+'<p style="font-size:18px">Congestion: <b><span style="color:'+place.opening_hours.isOpen()+'">%</b></span></p>'
+					// console.log(place);
+					// textColor(getCongestion({location: new google.maps.LatLng(49.280525, -123.118844), weight: 78}))
+					let contentString = "<div><h2><b>"+place.name+"</b></h2></div>"+'<p style="font-size:18px">Congestion: <b><span style="color:'+textColour(Math.round(getCongestion(places[i])))+'">'+Math.round(getCongestion(places[i]))+'%</b></span></p>'
 					makeInfoWindow(marker, contentString);
 
 					var li = document.createElement('li');
@@ -242,13 +240,14 @@
       	var points = getPoints();
       	var pop = 0;
         // determine the radius
-        let radius = Math.sqrt(store.size);
+        let radius = Math.sqrt(calcArea(store));
         let radiusDeg = 1/(111320/radius);
-        // coordinates for the store
-        let coordinates = store.position.toString();
+		// coordinates for the store
+		// let rawCoordinates = new google.maps.LatLng(store.geometry.location.lat(), store.geometry.location.lng());
+        let coordinates = store.geometry.location.toString();
         coordinates = coordinates.slice(1,coordinates.length-1);
         let coords = coordinates.split(",");
-      	for(var i=0; i<points.length; i++) {
+      	for (var i = 0; i < points.length; i++) {
           // coordinates for the point
           let pCoordinates = points[i].location.toString();
           pCoordinates = pCoordinates.slice(1,pCoordinates.length-1);
@@ -257,18 +256,33 @@
       			pop += points[i].weight;
       		}
       	}
-      	return (pop/(store.size*(5/93)))*100;
+      	return (pop/(calcArea(store)*(5/93)))*100;
       }
       // determine the colour of the text
       function textColour(congest) {
-        if(congest>100) {
+        if (congest > 100) {
           return "Tomato";
         } else if(congest>50) {
           return "Orange";
         } else {
           return "MediumSeaGreen";
         }
-      }
+	  }
+	  function calcArea(store) {
+		  let storePath = [
+		  new google.maps.LatLng(store.geometry.viewport.Za["i"], store.geometry.viewport.Va["j"]),
+		  new google.maps.LatLng(store.geometry.viewport.Za["j"], store.geometry.viewport.Va["j"]),
+		  new google.maps.LatLng(store.geometry.viewport.Za["i"], store.geometry.viewport.Va["i"]),
+		  new google.maps.LatLng(store.geometry.viewport.Za["j"], store.geometry.viewport.Va["i"])
+		  ]
+		  let area = google.maps.geometry.spherical.computeArea(storePath);
+		  return area;
+		//   const toRadians = (input) => {
+		// 	  return input * Math.PI / 180;
+		//   }
+		//   let area = 2 * toRadians(store.geometry.viewport.Va["j"] - store.geometry.viewport.Va["i"]) * (2 + Math.sin(toRadians(store.geometry.viewport.Za["j"])) + Math.sin(toRadians(store.geometry.viewport.Za["i"])));
+		// return area * 6378137 * 6378137 / 2;
+		}
       // Heatmap data
       function getPoints() {
         return [
@@ -1277,7 +1291,7 @@
 					script.onload = function(){
             			callback();
 					};
-					script.src = "https://maps.googleapis.com/maps/api/js?key=" + request.response + "&callback=initMap&libraries=places";
+					script.src = "https://maps.googleapis.com/maps/api/js?key=" + request.response + "&callback=initMap&libraries=places,geometry";
 					document.body.appendChild(script);
 				}
 				loadScript(initMap);

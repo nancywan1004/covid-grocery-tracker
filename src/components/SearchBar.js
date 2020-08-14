@@ -1,6 +1,8 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import StoreList from './StoreList';
+import '../style.css';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -28,7 +30,7 @@ class SearchBar extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        Choose your product:
+                        Choose your product: <br></br>
                         <Dropdown value={this.state.value} onSelect={this.handleChange}>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
                                 {this.state.value}
@@ -42,7 +44,7 @@ class SearchBar extends React.Component {
                             </Dropdown.Menu>
                     </Dropdown>
                     </label>
-                    <input type="submit" value="Submit" />
+                    <Button variant="secondary" type="submit">submit</Button>
                 </form>
 
                 <StoreList pType={this.state.pType} placesOnMap={this.props.placesOnMap}/>
