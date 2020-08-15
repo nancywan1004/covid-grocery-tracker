@@ -33,6 +33,7 @@ To initialize the back-end server, please run the following line under `/api` fo
 
 **Note: Please remember to add a `.env` under root to set your environment variables(i.e. here you need to set GCP_API_KEY in order to use the GCP service)
 
+
 <img src="demo1.png"
   width="80%" />
   
