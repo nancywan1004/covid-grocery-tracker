@@ -1,7 +1,3 @@
-
-<img src="demo1.png"
-  width="80%" />
-
 The project is a web app solution aiming to help the community get through the COVID-19 pandemic, with two core functionalities: real-time store congestion status tracking and inventory tracking.
 
 ## Highlights
@@ -37,4 +33,8 @@ To initialize the back-end server, please run the following line under `/api` fo
 
 **Note: Please remember to add a `.env` under root to set your environment variables(i.e. here you need to set GCP_API_KEY in order to use the GCP service)
 
+<img src="demo1.png"
+  width="80%" />
+  
+ 
 More details will be added in the future.
