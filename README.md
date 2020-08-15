@@ -36,6 +36,5 @@ To initialize the back-end server, please run the following line under `/api` fo
 ## Peek-in
 <img src="demo1.png"
   width="80%" />
-  
- 
+
 More details will be added in the future.
