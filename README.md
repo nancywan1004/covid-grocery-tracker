@@ -1,6 +1,7 @@
-The project is a web app solution aiming to help the community get through the COVID-19 pandemic, with two core functionalities: real-time store congestion status tracking and inventory tracking.
 
-<img src="demo1.png" width="600" />
+<img src="demo1.png" class="center" width="600" />
+
+The project is a web app solution aiming to help the community get through the COVID-19 pandemic, with two core functionalities: real-time store congestion status tracking and inventory tracking.
 
 ## Highlights
 The project has won the RBC 2020 Summer Innovation Challenge Best Hand-off Package award, out of 30 teams.
