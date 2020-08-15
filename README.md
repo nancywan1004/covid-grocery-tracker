@@ -9,10 +9,10 @@ The Early Birds #invt_challenge_team29
 - Communication Analyst/Project Coordinator: Rachel Nakka, Hayley (Hae Eun) Lee
 
 ## Technologies
-# FE:
+#### FE:
 - ReactJS, React BootStrap for inventory query page
 - HTML/CSS, JavaScript and Google Maps API for congestion page(map)
-# BE:
+#### BE:
 - NodeJS used to write APIs to retrieve inventory data
 - Google Maps APIs for store data
 
