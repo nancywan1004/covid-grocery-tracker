@@ -1,8 +1,6 @@
 
-<img src="demo1.png" style="display: block;
-  margin-left: auto;
-  margin-right: auto;" 
-  width="50%" />
+<img src="demo1.png"
+  width="80%" />
 
 The project is a web app solution aiming to help the community get through the COVID-19 pandemic, with two core functionalities: real-time store congestion status tracking and inventory tracking.
 
