@@ -5,56 +5,56 @@ The project is a web app solution aiming to help the community get through the C
 
 ## File Structure
 📦api
- ┣ 📂bin
- ┃ ┗ 📜www
- ┣ 📂node_modules
- ┣ 📂public
- ┃ ┣ 📂images
- ┃ ┣ 📂javascripts
- ┃ ┗ 📂stylesheets
- ┃ ┃ ┗ 📜style.css
- ┣ 📂routes
- ┃ ┣ 📜apiKey.js
- ┃ ┣ 📜index.js
- ┃ ┣ 📜inventory.js
- ┃ ┗ 📜users.js
- ┣ 📂store_data
- ┃ ┗ 📜store_data.json
- ┣ 📂views
- ┃ ┣ 📜error.jade
- ┃ ┣ 📜index.jade
- ┃ ┗ 📜layout.jade
- ┣ 📜.env
- ┣ 📜app.js
- ┣ 📜package-lock.json
- ┗ 📜package.json
+┣ 📂bin
+┃ ┗ 📜www
+┣ 📂node_module
+┣ 📂public
+┃ ┣ 📂images
+┃ ┣ 📂javascripts
+┃ ┗ 📂stylesheets
+┃ ┃ ┗ 📜style.css
+┣ 📂routes
+┃ ┣ 📜apiKey.js
+┃ ┣ 📜index.js
+┃ ┣ 📜inventory.js
+┃ ┗ 📜users.js
+┣ 📂store_data
+┃ ┗ 📜store_data.json
+┣ 📂views
+┃ ┣ 📜error.jade
+┃ ┣ 📜index.jade
+┃ ┗ 📜layout.jade
+┣ 📜.env
+┣ 📜app.js
+┣ 📜package-lock.json
+┗ 📜package.json
 
 📦public
- ┣ 📂scripts
- ┃ ┗ 📜randPointsGenerator.py
- ┣ 📜.DS_Store
- ┣ 📜GroceryJam_Logo.png
- ┣ 📜favicon.ico
- ┣ 📜groceries.png
- ┣ 📜index.html
- ┣ 📜logo192.png
- ┣ 📜logo512.png
- ┗ 📜robots.txt
+┣ 📂scripts
+┃ ┗ 📜randPointsGenerator.py
+┣ 📜.DS_Store
+┣ 📜GroceryJam_Logo.png
+┣ 📜favicon.ico
+┣ 📜groceries.png
+┣ 📜index.html
+┣ 📜logo192.png
+┣ 📜logo512.png
+┗ 📜robots.txt
 
 📦src
- ┣ 📂components
- ┃ ┣ 📜SearchBar.js
- ┃ ┣ 📜StoreItem.js
- ┃ ┣ 📜StoreList.js
- ┃ ┣ 📜TodoItem.js
- ┃ ┗ 📜TodoList.js
- ┣ 📜App.css
- ┣ 📜App.test.js
- ┣ 📜index.js
- ┣ 📜logo.svg
- ┣ 📜serviceWorker.js
- ┣ 📜setupTests.js
- ┗ 📜style.css
+┣ 📂components
+┃ ┣ 📜SearchBar.js
+┃ ┣ 📜StoreItem.js
+┃ ┣ 📜StoreList.js
+┃ ┣ 📜TodoItem.js
+┃ ┗ 📜TodoList.js
+┣ 📜App.css
+┣ 📜App.test.js
+┣ 📜index.js
+┣ 📜logo.svg
+┣ 📜serviceWorker.js
+┣ 📜setupTests.js
+┗ 📜style.css
 
 ## The Team
 The Early Birds #invt_challenge_team29
