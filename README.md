@@ -4,58 +4,62 @@ The project is a web app solution aiming to help the community get through the C
 ![Covid Grocery Tracker Demo v.1.0](demo/demo1.GIF)
 
 ## File Structure
-📦api
-┣ 📂bin
-┃ ┗ 📜www
-┣ 📂node_module
-┣ 📂public
-┃ ┣ 📂images
-┃ ┣ 📂javascripts
-┃ ┗ 📂stylesheets
-┃ ┃ ┗ 📜style.css
-┣ 📂routes
-┃ ┣ 📜apiKey.js
-┃ ┣ 📜index.js
-┃ ┣ 📜inventory.js
-┃ ┗ 📜users.js
-┣ 📂store_data
-┃ ┗ 📜store_data.json
-┣ 📂views
-┃ ┣ 📜error.jade
-┃ ┣ 📜index.jade
-┃ ┗ 📜layout.jade
-┣ 📜.env
-┣ 📜app.js
-┣ 📜package-lock.json
-┗ 📜package.json
-
-📦public
-┣ 📂scripts
-┃ ┗ 📜randPointsGenerator.py
-┣ 📜.DS_Store
-┣ 📜GroceryJam_Logo.png
-┣ 📜favicon.ico
-┣ 📜groceries.png
-┣ 📜index.html
-┣ 📜logo192.png
-┣ 📜logo512.png
-┗ 📜robots.txt
-
-📦src
-┣ 📂components
-┃ ┣ 📜SearchBar.js
-┃ ┣ 📜StoreItem.js
-┃ ┣ 📜StoreList.js
-┃ ┣ 📜TodoItem.js
-┃ ┗ 📜TodoList.js
-┣ 📜App.css
-┣ 📜App.test.js
-┣ 📜index.js
-┣ 📜logo.svg
-┣ 📜serviceWorker.js
-┣ 📜setupTests.js
-┗ 📜style.css
-
+```
+- 📂 __covid\-grocery\-tracker__
+   - 📄 [README.md](README.md)
+   - 📂 __api__
+     - 📄 [app.js](api/app.js)
+     - 📂 __bin__
+       - 📄 [www](api/bin/www)
+     - 📄 [node\_modules](api/node_modules)
+     - 📄 [package\-lock.json](api/package-lock.json)
+     - 📄 [package.json](api/package.json)
+     - 📂 __public__
+       - 📂 __images__
+       - 📂 __javascripts__
+       - 📂 __stylesheets__
+         - 📄 [style.css](api/public/stylesheets/style.css)
+     - 📂 __routes__
+       - 📄 [apiKey.js](api/routes/apiKey.js)
+       - 📄 [index.js](api/routes/index.js)
+       - 📄 [inventory.js](api/routes/inventory.js)
+       - 📄 [users.js](api/routes/users.js)
+     - 📂 __store\_data__
+       - 📄 [store\_data.json](api/store_data/store_data.json)
+     - 📂 __views__
+       - 📄 [error.jade](api/views/error.jade)
+       - 📄 [index.jade](api/views/index.jade)
+       - 📄 [layout.jade](api/views/layout.jade)
+   - 📂 __demo__
+     - 📄 [demo1.GIF](demo/demo1.GIF)
+   - 📄 [node\_modules](node_modules)
+   - 📄 [package\-lock.json](package-lock.json)
+   - 📄 [package.json](package.json)
+   - 📂 __public__
+     - 📄 [GroceryJam\_Logo.png](public/GroceryJam_Logo.png)
+     - 📄 [favicon.ico](public/favicon.ico)
+     - 📄 [groceries.png](public/groceries.png)
+     - 📄 [index.html](public/index.html)
+     - 📄 [logo192.png](public/logo192.png)
+     - 📄 [logo512.png](public/logo512.png)
+     - 📄 [robots.txt](public/robots.txt)
+     - 📂 __scripts__
+       - 📄 [randPointsGenerator.py](public/scripts/randPointsGenerator.py)
+   - 📂 __src__
+     - 📄 [App.css](src/App.css)
+     - 📄 [App.test.js](src/App.test.js)
+     - 📂 __components__
+       - 📄 [SearchBar.js](src/components/SearchBar.js)
+       - 📄 [StoreItem.js](src/components/StoreItem.js)
+       - 📄 [StoreList.js](src/components/StoreList.js)
+       - 📄 [TodoItem.js](src/components/TodoItem.js)
+       - 📄 [TodoList.js](src/components/TodoList.js)
+     - 📄 [index.js](src/index.js)
+     - 📄 [logo.svg](src/logo.svg)
+     - 📄 [serviceWorker.js](src/serviceWorker.js)
+     - 📄 [setupTests.js](src/setupTests.js)
+     - 📄 [style.css](src/style.css)
+```
 ## The Team
 The Early Birds #invt_challenge_team29
 - Developers: Nancy(Leqi) Wan, Luke Zhang, Alexander (Alex) Efimov, Garima Aggarwal
