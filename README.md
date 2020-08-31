@@ -1,7 +1,7 @@
 The project is a web app solution aiming to help the community get through the COVID-19 pandemic, with two core functionalities: real-time store congestion status tracking and inventory tracking.
 
 ## Interface Walk-through
-![Covid Grocery Tracker Demo v.1.0]s
+![Covid Grocery Tracker Demo v.1.0](demo/demo1.GIF)
 
 ## File Structure
 ```
