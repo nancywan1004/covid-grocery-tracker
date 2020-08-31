@@ -9,7 +9,6 @@ The project is a web app solution aiming to help the community get through the C
    - 📂 __api__
      - 📄 [app.js]
      - 📂 __bin__
-       - 📄 [www]
      - 📄 [node\_modules]
      - 📄 [package\-lock.json]
      - 📄 [package.json]
@@ -26,9 +25,6 @@ The project is a web app solution aiming to help the community get through the C
      - 📂 __store\_data__
        - 📄 [store\_data.json]
      - 📂 __views__
-       - 📄 [error.jade]
-       - 📄 [index.jade]
-       - 📄 [layout.jade]
    - 📂 __demo__
      - 📄 [demo1.GIF]
    - 📄 [node\_modules]
@@ -51,9 +47,6 @@ The project is a web app solution aiming to help the community get through the C
        - 📄 [TodoItem.js]
        - 📄 [TodoList.js]
      - 📄 [index.js]
-     - 📄 [logo.svg]
-     - 📄 [serviceWorker.js]
-     - 📄 [setupTests.js]
      - 📄 [style.css]
 ```
 ## The Team
