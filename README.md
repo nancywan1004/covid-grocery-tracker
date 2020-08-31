@@ -35,4 +35,3 @@ To initialize the back-end server, please run the following line under `/api` fo
 
 ## Award
 The project has won the RBC 2020 Summer Innovation Challenge Best Hand-off Package award, out of 30 teams.
-
