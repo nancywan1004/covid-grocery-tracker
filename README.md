@@ -1,7 +1,7 @@
 The project is a web app solution aiming to help the community get through the COVID-19 pandemic, with two core functionalities: real-time store congestion status tracking and inventory tracking.
 
-## Highlights
-The project has won the RBC 2020 Summer Innovation Challenge Best Hand-off Package award, out of 30 teams.
+## Interface Walk-through
+![Covid Grocery Tracker Demo v.1.0](demo/demo1.GIF)
 
 ## The Team
 The Early Birds #invt_challenge_team29
@@ -13,7 +13,7 @@ The Early Birds #invt_challenge_team29
 - ReactJS, React BootStrap for inventory query page
 - HTML/CSS, JavaScript and Google Maps API for congestion page(map)
 #### BE:
-- NodeJS used to write APIs to retrieve inventory data
+- NodeJS used to write backend APIs to retrieve GCP_API_KEY to access GCP services and inventory data
 - Google Maps APIs for store data
 
 ## Run the project
@@ -33,4 +33,6 @@ To initialize the back-end server, please run the following line under `/api` fo
 
 **Note: Please remember to add a `.env` under root to set your environment variables(i.e. here you need to set GCP_API_KEY in order to use the GCP service)
 
-More details will be added in the future.
+## Award
+The project has won the RBC 2020 Summer Innovation Challenge Best Hand-off Package award, out of 30 teams.
+

@@ -2,6 +2,7 @@
 
 .*
 !.gitignore
+.icloud
 
 # dependencies
 /node_modules
