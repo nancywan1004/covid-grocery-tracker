@@ -11,6 +11,7 @@ class StoreItem extends React.Component {
         this.toggleHover = this.toggleHover.bind(this);
     }
 
+    /* set toggle ON/OFF state of isOnMap */
     toggleHover() {
         this.setState({ hoverState: !this.state.hoverState });
     }
