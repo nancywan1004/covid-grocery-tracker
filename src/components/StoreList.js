@@ -10,6 +10,7 @@ class StoreList extends React.Component {
         this.getStoresByAvail = this.getStoresByAvail.bind(this);
     }
 
+    /* get stores' data by pType */
     getStoresByAvail(pType) {
         fetch("http://localhost:9000/inventory/" + pType)
             .then(res => res.json())
